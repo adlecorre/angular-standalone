@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fond dégradé moderne */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Particules floues */
+.particle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(4px);
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+.particle:nth-child(1) { top: 5%; left: 5%; animation-duration: 25s; }
+.particle:nth-child(2) { top: 10%; right: 5%; animation-duration: 30s; }
+.particle:nth-child(3) { bottom: 5%; left: 10%; animation-duration: 22s; }
+.particle:nth-child(4) { bottom: 10%; right: 10%; animation-duration: 28s; }
+.particle:nth-child(5) { top: 50%; left: 90%; animation-duration: 35s; }
+
+@keyframes float {
+  0% { transform: translate(0,0) scale(1); opacity: 0.5; }
+  50% { transform: translate(30px,-20px) scale(1.2); opacity: 0.8; }
+  100% { transform: translate(0,0) scale(1); opacity: 0.5; }
+}
+
+/* Contenu au-dessus */
+router-outlet, .content {
+  position: relative;
+  z-index: 10;
+}

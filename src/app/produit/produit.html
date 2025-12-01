@@ -1,0 +1,46 @@
+<div class="card shadow-sm h-100 border-0">
+
+  <div class="card-header bg-primary text-white">
+    <h5 class="card-title mb-0 text-center">
+      <i class="fa-solid fa-seedling me-1"></i>
+      {{ produit.nom | uppercase }}
+    </h5>
+  </div>
+
+  <div class="card-body">
+
+    <p class="mb-2">
+      <i class="fa-solid fa-tag text-secondary me-1"></i>
+      Prix : <strong>{{ produit.prix }} €</strong>
+    </p>
+
+    <p class="mb-3">
+      <i class="fa-solid fa-boxes-stacked text-secondary me-1"></i>
+      Stock : 
+      <span class="badge bg-info text-dark">{{ produit.quantite }}</span>
+    </p>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">
+        <i class="fa-solid fa-cart-plus"></i>
+      </span>
+      <input 
+        type="number" 
+        class="form-control"
+        placeholder="Quantité"
+        [(ngModel)]="qteAchetee"
+      >
+    </div>
+
+    <button 
+      class="btn btn-success w-100"
+      (click)="acheter()"
+      [disabled]="disabled || produit.quantite === 0"
+    >
+      <i class="fa-solid fa-circle-check me-2"></i>
+      Acheter
+    </button>
+
+  </div>
+
+</div>

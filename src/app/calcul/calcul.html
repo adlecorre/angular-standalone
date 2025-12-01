@@ -1,0 +1,65 @@
+<div class="container mt-4">
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+
+      <h2 class="text-center mb-4">
+        <i class="fa-solid fa-calculator me-2"></i>
+        Calculatrice
+      </h2>
+
+      <div class="d-flex justify-content-center gap-2 mb-4">
+        <button class="btn btn-outline-primary" (click)="setOp('plus')" [class.active]="opParam === 'plus'">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <button class="btn btn-outline-warning" (click)="setOp('moins')" [class.active]="opParam === 'moins'">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button class="btn btn-outline-success" (click)="setOp('fois')" [class.active]="opParam === 'fois'">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button class="btn btn-outline-danger" (click)="setOp('div')" [class.active]="opParam === 'div'">
+          <i class="fa-solid fa-divide"></i>
+        </button>
+      </div>
+
+      <form (ngSubmit)="onSubmitForm()" class="row g-3 text-center justify-content-center">
+
+        <div class="col-md-2">
+          <label class="form-label">
+            
+          </label>
+          <input type="number" class="form-control text-center" [(ngModel)]="a" name="a" />
+        </div>
+
+        <div class="col-md-2">
+          <label class="form-label">
+            
+          </label>
+          <input type="number" class="form-control text-center" [(ngModel)]="b" name="b" />
+        </div>
+
+        <div class="text-center mt-3">
+          <button type="submit" class="btn btn-primary">
+            Calculer
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-4 text-center">
+        <div *ngIf="error" class="alert alert-danger">
+          <i class="fa-solid fa-triangle-exclamation me-2"></i>
+          {{ error }}
+        </div>
+
+        <div *ngIf="result !== null && !error" class="alert alert-success">
+          <i class="fa-solid fa-check me-2"></i>
+          Résultat : {{ a }} {{ opSymbol }} {{ b }} = <strong>{{ result }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

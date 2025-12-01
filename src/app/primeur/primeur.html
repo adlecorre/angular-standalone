@@ -1,0 +1,41 @@
+<div class="container bg-white rounded py-4">
+  <h2 class="mb-4 text-center">
+    <i class="fa-solid fa-apple-whole me-2"></i>
+    Primeur – Total : 
+    <span class="badge bg-success fs-5 ms-2">{{ total }} €</span>
+  </h2>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">Ajouter un produit</h5>
+      <div class="row g-2 align-items-end">
+        <div class="col-md-4">
+          <label>Nom</label>
+          <input type="text" class="form-control" [(ngModel)]="nouveauNom" placeholder="Nom du produit">
+        </div>
+        <div class="col-md-3">
+          <label>Prix (€)</label>
+          <input type="number" class="form-control" [(ngModel)]="nouveauPrix" placeholder="Prix">
+        </div>
+        <div class="col-md-3">
+          <label>Quantité</label>
+          <input type="number" class="form-control" [(ngModel)]="nouvelleQuantite" placeholder="Quantité">
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary w-100" (click)="ajouter()">
+            <i class="fa-solid fa-plus me-1"></i> Ajouter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    @for (p of produits; track p.nom) {
+      <div class="col-md-4">
+        <app-produit [produit]="p" (achat)="ajouterAuTotal($event)"></app-produit>
+      </div>
+    }
+  </div>
+
+</div>

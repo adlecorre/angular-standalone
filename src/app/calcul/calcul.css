@@ -1,0 +1,39 @@
+.calcul-container {
+  max-width: 480px;
+  margin: 16px auto;
+  font-family: Arial, sans-serif;
+}
+.op-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.op-buttons button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.op-buttons button.active {
+  font-weight: 700;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+.form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.form label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.output .error {
+  color: #a00;
+  font-weight: 700;
+}
+.hint {
+  color: #666;
+  font-size: 0.9rem;
+}
