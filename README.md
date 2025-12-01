@@ -1,59 +1,79 @@
-# AngularStandalone
+# 🟢 Mon Application Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+Cette application contient trois fonctionnalités distinctes développées en **Angular 17+** avec **composants standalone**, **Bootstrap 5** et **FontAwesome** :  
 
-## Development server
+1. **Calculatrice** – un simple calcul interactif (à compléter selon ton implémentation).  
+2. **Primeur** – gestion de produits avec ajout dynamique et calcul du total.  
+3. **Clavier** – clavier interactif avec textarea et boutons alphabétiques.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🔹 Fonctionnalités
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 1. Calculatrice
+- Entrée de nombres et opérations de base.
+- Affichage du résultat en temps réel.
 
-## Code scaffolding
+### 2. Primeur
+- Liste initiale de produits (`banane`, `fraise`, `poivron`, etc.).
+- Formulaire pour ajouter de nouveaux produits (nom, prix, quantité).  
+- Achat de produits via boutons, mise à jour du stock et du total.  
+- Interface Bootstrap avec cartes et badges pour chaque produit.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 3. Clavier
+- Affiche un textarea et 26 boutons pour les lettres a-z.  
+- Chaque bouton ajoute la lettre correspondante dans le textarea.  
+- Composants parent/enfant (`ClavierComponent` et `ToucheComponent`) avec `@Input` et `@Output`.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🏗️ Structure du projet
 
-```bash
-ng generate --help
-```
+src/app/  
+  calcul/                  # Composant Calculatrice  
+  primeur/                 # Composant Primeur  
+    primeur.component.ts  
+    primeur.component.html  
+    produit.component.ts  
+  clavier/                 # Composant Clavier  
+    clavier.component.ts  
+    touche.component.ts  
+  app.routes.ts            # Routing des composants  
+  main.ts                  # Bootstrap standalone avec provideRouter  
 
-## Building
+---
 
-To build the project run:
+## ⚡ Installation & Lancement
 
-```bash
-ng build
-```
+1. Cloner le dépôt :  
+   `git clone https://github.com/<votre-utilisateur>/<nom-du-repo>.git`  
+   `cd <nom-du-repo>`
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+2. Installer les dépendances :  
+   `npm install`
 
-## Running unit tests
+3. Lancer l’application :  
+   `ng serve`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+4. Accéder aux composants dans le navigateur :  
+- Calculatrice → `http://localhost:4200/calcul`  
+- Primeur → `http://localhost:4200/primeur`  
+- Clavier → `http://localhost:4200/clavier`
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 🎨 Technologies utilisées
 
-For end-to-end (e2e) testing, run:
+- Angular 17+ (standalone components)  
+- TypeScript  
+- Bootstrap 5  
+- FontAwesome  
+- Angular Router pour navigation entre les composants  
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🔹 Remarques
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Tous les composants enfants sont **standalone** et communiquent avec leur parent via `@Input` / `@Output`.  
+- Le projet est conçu pour être responsive et lisible sur mobile et desktop.  
+- Les données ne sont pas persistées : **le refresh de la page réinitialise tout**.
