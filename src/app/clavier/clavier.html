@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="container bg-white rounded py-4">
+
+    <h2 class="mb-3 text-center">
+      <i class="fa-solid fa-keyboard me-2"></i>
+      Clavier
+    </h2>
+
+    <textarea class="form-control mb-3" rows="3" [value]="texte" readonly></textarea>
+
+    <div class="d-flex flex-wrap">
+      <ng-container *ngFor="let lettre of lettres">
+        <app-touche
+          [value]="lettre"
+          (cliquer)="ajouterLettre($event)">
+        </app-touche>
+      </ng-container>
+    </div>
+
+  </div>
+</div>
