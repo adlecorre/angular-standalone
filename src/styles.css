@@ -8,6 +8,11 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 /* Particles */
 .particle {
   position: absolute;
