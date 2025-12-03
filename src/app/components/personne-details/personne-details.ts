@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, signal } from '@angular/core';
-import { PersonneService } from '../../personne';
+import { PersonneService } from '../../services/personne';
 import { Personne } from '../../models/personne';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

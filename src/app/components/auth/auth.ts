@@ -28,7 +28,7 @@ export class Auth {
   login() {
     if (this.users.some(u => u.password == this.user.password && u.username == this.user.username)) {
       localStorage.setItem('user', JSON.stringify(this.user))
-      this.router.navigateByUrl('/primeur')
+      this.router.navigateByUrl('/personne')
 
     } else {
       this.erreur.set("Identifiants incorrects")

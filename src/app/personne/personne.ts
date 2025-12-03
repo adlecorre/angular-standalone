@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { PersonneService } from '../personne';
+import { PersonneService } from '../services/personne';
 import { Personne } from '../models/personne';
 import { RouterModule } from '@angular/router';
 
