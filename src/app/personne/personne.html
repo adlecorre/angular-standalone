@@ -15,9 +15,6 @@
             #nom="ngModel"
             required
         />
-        <div *ngIf="nom.invalid && nom.dirty" class="text-danger">
-            Ce champ est obligatoire
-        </div>
     </div>
 
     <div class="mb-3">
@@ -31,9 +28,6 @@
             #prenom="ngModel"
             required
         />
-        <div *ngIf="prenom.invalid && prenom.dirty" class="text-danger">
-            Ce champ est obligatoire
-        </div>
     </div>
 
     <div class="mb-3">
@@ -48,9 +42,6 @@
             required
             max="120"
         />
-        <div *ngIf="age.invalid && age.dirty" class="text-danger">
-            Ce champ est obligatoire et doit contenir une valeur inférieure à 120
-        </div>
     </div>
 
     <button class="btn btn-primary" [disabled]="form.invalid">Ajouter</button>
@@ -60,10 +51,12 @@
 <p *ngIf="personnes().length === 0">Aucune personne pour l'instant.</p>
 <ul>
     <li *ngFor="let p of personnes(); let i = index">
-        {{ p.nom }} {{ p.prenom }}
+        {{ p.nom }} {{ p.prenom }} 
+        <i class="fa-solid fa-eye"></i>
         <button (click)="supprimer(p.id)" class="btn btn-link text-danger">
             <i class="fa-solid fa-trash-can"></i>
         </button>
+        <a href="/personne/{{p.id}}">Details</a>
     </li>
     </ul>
 

@@ -1,0 +1,67 @@
+<div class="container bg-white p-4 rounded shadow-sm mt-4">
+
+    <div class="card border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">
+                <i class="fa-solid fa-user me-2"></i>
+                Informations sur la personne
+                <span class="badge bg-light text-primary ms-2">#{{ id() }}</span>
+            </h5>
+        </div>
+
+        <div class="card-body">
+            <form (ngSubmit)="enregistrer()" #form="ngForm">
+
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input
+                        type="text"
+                        id="nom"
+                        class="form-control"
+                        [(ngModel)]="personne().nom"
+                        name="nom"
+                        #nom="ngModel"
+                        required
+                    />
+                    <div *ngIf="nom.invalid && nom.dirty" class="text-danger small mt-1">Ce champ est obligatoire</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input
+                        type="text"
+                        id="prenom"
+                        class="form-control"
+                        [(ngModel)]="personne().prenom"
+                        name="prenom"
+                        #prenom="ngModel"
+                        required
+                    />
+                    <div *ngIf="prenom.invalid && prenom.dirty" class="text-danger small mt-1">Ce champ est obligatoire</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="age" class="form-label">Âge</label>
+                    <input
+                        type="number"
+                        id="age"
+                        class="form-control"
+                        [(ngModel)]="personne().age"
+                        name="age"
+                        #age="ngModel"
+                        required
+                        max="120"
+                    />
+                    <div *ngIf="age.invalid && age.dirty" class="text-danger small mt-1">Ce champ est obligatoire et doit contenir une valeur inférieure à 120</div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary" [disabled]="form.invalid">Enregistrer</button>
+                    <a class="btn btn-outline-secondary" routerLink="/personne">Annuler</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
