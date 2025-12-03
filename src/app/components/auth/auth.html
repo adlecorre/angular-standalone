@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="container bg-white rounded py-4 shadow-sm" style="max-width: 400px;">
+        <h2 class="mb-4 text-center text-primary">Authentification</h2>
+
+        <form (ngSubmit)="login()" #form="ngForm" novalidate>
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Nom d'utilisateur</label>
+        <input type="text" name="username" [(ngModel)]="user.username" required minlength="3">
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" name="password" [(ngModel)]="user.password" minlength="3">
+            </div>
+
+            <button class="btn btn-primary w-100" [disabled]="form.invalid">Se connecter</button>
+
+        </form>
+        @if (erreur()) {
+        <div class="alert alert-danger my-5" role="alert">
+            {{ erreur() }}
+        </div>
+    }
+    </div>
+</div>

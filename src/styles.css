@@ -1,3 +1,4 @@
+/* Global styles */
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Particles */
 .particle {
   position: absolute;
   width: 15px;
@@ -29,29 +31,65 @@ body {
   100% { transform: translate(0,0) scale(1); opacity: 0.5; }
 }
 
+/* Router outlet */
 router-outlet, .content {
   position: relative;
   z-index: 10;
 }
 
-nav {
+/* Navbar */
+nav.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.027);
+  height: 80px;
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  height: 80px; /* Increased height for a larger navbar */
   display: flex;
-  align-items: center; /* Center content vertically */
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  padding: 0 2rem;
 }
 
-nav, nav a, nav a:visited {
-  color: white; /* Ensure all text and links are white */
+nav.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-nav a:hover {
-  color: #ffffff; /* Slightly lighter color on hover */
+nav.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 1.5rem;
+}
+
+nav.navbar a:hover {
+  color: #ffffffaa;
+}
+
+nav.navbar .navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.navbar .navbar-nav .nav-item {
+  margin: 0 0.5rem;
+}
+
+/* Responsive: menu en colonne sur petits écrans */
+@media (max-width: 600px) {
+  nav.navbar .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav.navbar .navbar-nav .nav-item {
+    margin: 0.25rem 0;
+  }
 }

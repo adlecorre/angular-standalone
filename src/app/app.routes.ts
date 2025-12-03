@@ -6,4 +6,5 @@ export const routes: Routes = [
     { path: 'clavier', loadComponent: () => import('./clavier/clavier').then(m => m.Clavier) },
     { path: 'personne',  loadComponent: () => import('./personne/personne').then(m => m.PersonneComponent) },
     { path: 'personne/:id', loadComponent: () => import('./components/personne-details/personne-details').then(m => m.PersonneDetailsComponent) },
+    { path: 'auth', loadComponent: () => import('./components/auth/auth').then(m => m.Auth) },
 ];
