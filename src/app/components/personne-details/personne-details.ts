@@ -13,10 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./personne-details.css'],
 })
 export class PersonneDetailsComponent implements OnInit  {
-  /** optional input when used as a child component */
   @Input() idInput?: number;
 
-  /** signal used by the template: call `id()` in template to get value */
   id = signal<number | null>(null);
   personne = signal<Personne>({ nom: '', prenom: '', age: 0 });
 

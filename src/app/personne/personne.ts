@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PersonneService } from '../personne';
 import { Personne } from '../models/personne';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-personne',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './personne.html',
   styleUrls: ['./personne.css'],
 })
