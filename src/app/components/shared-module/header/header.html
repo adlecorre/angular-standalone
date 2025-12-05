@@ -1,0 +1,14 @@
+<header>
+    <h1 class="text-white my-5">
+        Welcome to {{ title }}
+        <i style="color: tomato;" class="fa-brands fa-angular"></i>!
+        <button type="button" class="btn btn-link neutral-link" (click)="login()" [hidden]="isConnected()">
+            Login
+        </button>
+        <button type="button" class="btn btn-link neutral-link" (click)="logout()" [hidden]="!isConnected()">
+            Logout
+        </button>
+
+    </h1>
+
+</header>

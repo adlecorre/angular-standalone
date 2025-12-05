@@ -1,6 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/shared-module/header/header';
+import { MenuComponent } from './components/shared-module/menu/menu';
 
 interface Particle {
   top: string;
@@ -11,7 +13,7 @@ interface Particle {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, HeaderComponent,MenuComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

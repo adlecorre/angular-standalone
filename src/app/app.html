@@ -1,8 +1,5 @@
 <div class="background">
-  <div 
-    class="particle" 
-    *ngFor="let p of particles"
-    [ngStyle]="{
+  <div class="particle" *ngFor="let p of particles" [ngStyle]="{
       top: p.top,
       left: p.left,
       width: p.size + 'px',
@@ -10,6 +7,12 @@
       animationDuration: p.duration + 's'
     }">
   </div>
+  <div style="text-align:center">
+    <app-header />
+    <app-menu />
+    <!-- permet d'indiquer à Angular l'emplacement
+   des composants demandés dans la barre d'adresse -->
+    <router-outlet></router-outlet>
+  </div>
 
-  <router-outlet></router-outlet>
 </div>
